@@ -2,6 +2,7 @@ AddEventHandler("nex-duty:server:onDutyStart", function(source, callsign, entity
 
     -- Set the 'onduty' state from the server safely
     Player(source).state:set("onduty", true, true)
+    TriggerClientEvent('dutybridge:client:giveArmor', source)
     TriggerClientEvent('okokNotify:Alert', source, 'Duty System', 'You are now on duty.', 3000, 'info', true)
 end)
 
